@@ -1,0 +1,409 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #fff7f3, #ffe6e9);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(to bottom, #ff9aa2, #ffdde1);
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    position: relative;
+}
+
+.header-content {
+    background: url('images/IMG-20240910-WA0002.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center; /* Centers the image */
+    padding: 50px;
+    height: 100%;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+header .btn-primary {
+    display: inline-block;
+    background: #ff6384;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+header .btn-primary:hover {
+    background: #ff506d;
+    transform: scale(1.05);
+}
+
+main {
+    margin-top: 40px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #ff6384;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.timeline-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.5s;
+}
+.timeline-item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #ff6384;
+}
+
+/* Gallery */
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Makes the layout responsive */
+    gap: 30px;
+    padding: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 350px;
+    opacity: 0; /* Initially hide gallery items */
+    transform: translateY(50px); /* Move items down initially */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade-in transition */
+}
+
+.gallery-item.fade-in {
+    opacity: 1; /* Fade-in effect */
+    transform: translateY(0); /* Move to normal position */
+}
+
+.gallery-item img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    position: center;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for caption */
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+    visibility: visible;
+}
+
+#ToYou {
+    background: linear-gradient(to bottom right, #fff7f3, #ffe6e9);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 50px auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+#ToYou::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 150, 150, 0.4);
+    border-radius: 50%;
+    z-index: 1;
+    animation: floating 8s ease-in-out infinite;
+}
+
+#ToYou::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 150, 150, 0.4);
+    border-radius: 50%;
+    z-index: 1;
+    animation: floating 10s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20px, 20px);
+    }
+}
+
+#ToYou h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff6384;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+#ToYou p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    position: relative;
+    z-index: 2;
+}
+
+#ToYou p::before, #ToYou p::after {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff6384;
+    opacity: 0.8;
+}
+
+#ToYou p::before {
+    content: "“"; /* Opening quotation mark */
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+#ToYou p::after {
+    content: "”"; /* Closing quotation mark */
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+}
+
+#ToYou p em {
+    color: #ff506d; /* Highlighted color for important words */
+    font-style: italic;
+    font-weight: bold;
+}
+
+#ToYou p strong {
+    color: #294C63; /* Contrasting blue for strong emphasis */
+    font-weight: bold;
+}
+
+#ToYou .signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #ff506d;
+    margin-top: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Floating Hearts Animation - Bottom to Top */
+#ToYou .floating-hearts {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Covers the entire height for smooth animations */
+    pointer-events: none;
+    z-index: 0;
+}
+
+#ToYou .floating-hearts .heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,%3Csvg xmlns%3D%27http://www.w3.org/2000/svg%27 viewBox%3D%270 0 24 24%27 fill%3D%27%23FF6B6B%27%3E%3Cpath d%3D%27M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z%27/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: floatHearts 6s infinite ease-in-out;
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(50vh) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px) scale(0.6);
+        opacity: 0;
+    }
+}
+
+
+/* Footer */
+footer {
+    background: #ff6384;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns%3D%27http://www.w3.org/2000/svg%27 viewBox%3D%270 0 24 24%27 fill%3D%27%23FF6B6B%27%3E%3Cpath d%3D%27M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z%27/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 80px 20px;
+    }
+
+    .header-content {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Stack gallery items on small screens */
+    }
+
+    .timeline {
+        margin-top: 20px;
+    }
+
+    .timeline-item {
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+}
+
