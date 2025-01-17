@@ -1,20 +1,41 @@
 /* General Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #fff7f3, #ffe6e9);
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #2C3E50;
+    background: linear-gradient(to bottom right, #A8D8D2, #E3F2F1, #FBAE54);
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #E67E22;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #F39C12;
+}
+
+/* Header */
 header {
     background: linear-gradient(to bottom, #ff9aa2, #ffdde1);
-    text-align: center;
-    padding: 100px 20px;
     color: white;
+    padding: 100px 20px;
+    text-align: center;
     position: relative;
-    overflow: hidden; /* Ensures floating circles stay within bounds */
+    overflow: hidden;
 }
 
 .header-content {
@@ -97,6 +118,7 @@ header .btn-primary:hover {
     transform: scale(1.05);
 }
 
+/* Main Content */
 main {
     margin-top: 40px;
 }
@@ -115,36 +137,32 @@ h2 {
 }
 
 /* Timeline */
-/* Timeline Container */
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Increased gap between items for better spacing */
+    gap: 30px;
     margin: 50px auto;
     max-width: 1200px;
     padding: 0 20px;
     animation: fadeInTimeline 1s ease-in-out forwards;
 }
 
-/* Timeline Item */
 .timeline-item {
-    background: linear-gradient(135deg, #ff9aa2, #ffdde1); /* Soft gradient background */
-    border-radius: 20px; /* Increased border radius for smoother corners */
+    background: linear-gradient(135deg, #ff9aa2, #ffdde1);
+    border-radius: 20px;
     padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     animation: fadeIn 1s ease forwards;
     opacity: 0;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added transition for box-shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Hover Effect for Timeline Item */
 .timeline-item:hover {
-    transform: translateY(-10px); /* Slightly lift up the item */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Timeline Item Animation */
 .timeline-item:nth-child(1) {
     animation-delay: 0.5s;
 }
@@ -152,17 +170,15 @@ h2 {
     animation-delay: 1s;
 }
 
-/* Date Styling */
 .timeline-date {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    color: #ff506d; /* Stronger pinkish-red */
+    color: #ff506d;
     font-size: 1.2rem;
     margin-bottom: 10px;
     position: relative;
 }
 
-/* Timeline Content Styling */
 .timeline-content {
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -171,7 +187,6 @@ h2 {
     text-align: justify;
 }
 
-/* Add a decorative dot indicator */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -180,9 +195,8 @@ h2 {
     transform: translateY(-50%);
     width: 10px;
     height: 10px;
-    background: #ff6384; /* Red dot */
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #ff6384;
+    border-radius: 50 box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Animation Keyframes for Fade-in Effect */
@@ -207,89 +221,95 @@ h2 {
     }
 }
 
-/* Responsive Design for Smaller Screens */
+/* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        padding: 80px 20px;
+    }
+
+    .header-content {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
     .timeline {
-        padding: 0 15px;
-        gap: 20px;
+        margin-top: 20px;
     }
 
     .timeline-item {
         padding: 15px;
     }
 
-    .timeline-date {
-        font-size: 1.1rem;
-    }
-
-    .timeline-content {
-        font-size: 1rem;
+    footer {
+        font-size: 0.8rem;
+        padding: 15px;
     }
 }
 
 /* Gallery */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
-    gap: 30px; /* Space between items */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     padding: 20px;
-    justify-items: center; /* Center items within the grid */
+    justify-items: center;
 }
 
-/* Gallery Item */
 .gallery-item {
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     height: 350px;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Move items down initially */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade-in transition */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Gallery Item Fade-in */
 .gallery-item.fade-in {
-    opacity: 1; /* Fade-in effect */
-    transform: translateY(0); /* Move to normal position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Image Styling */
 .gallery-item img {
-    object-fit: cover; /* Ensures images fill the container */
+    object-fit: cover;
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 15px; /* Rounded corners */
-    transition: transform 0.4s ease, filter 0.4s ease; /* Smooth zoom effect */
+    border-radius: 15px;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Hover Effect on Image */
 .gallery-item:hover img {
-    transform: scale(1.1); /* Slight zoom effect */
-    filter: brightness(0.8); /* Slight darkening effect for hover */
+    transform: scale(1.1);
+    filter: brightness(0.8);
 }
 
-/* Caption Styling */
 .gallery-item figcaption {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%); /* Center the caption horizontally */
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background for caption */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: 1.2em;
     padding: 10px;
     border-radius: 5px;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Hidden when not hovered */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show Caption on Hover */
 .gallery-item:hover figcaption {
-    opacity: 1; /* Show caption */
-    visibility: visible; /* Ensure visibility */
+    opacity: 1;
+    visibility: visible;
 }
 
 
