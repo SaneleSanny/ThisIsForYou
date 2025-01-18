@@ -11,26 +11,25 @@ body {
 header {
     background: linear-gradient(to bottom, #ff9aa2, #ffdde1);
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px; /* Increased padding for a more spacious feel */
     color: white;
     position: relative;
-    overflow: hidden; /* Ensures floating circles stay within bounds */
+    overflow: hidden;
 }
 
 .header-content {
-    background-size: contain;
-    background-position: center; /* Centers the image */
-    padding: 65px;
+    background-size: cover; /* Changed to cover for better image display */
+    padding: 80px; /* Increased padding */
     height: 500px;
     max-width: 800px;
     margin: auto;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
     position: relative;
     z-index: 1;
-    border-radius: 10px;
-    color: white; /* For text visibility */
+    border-radius: 15px; /* More rounded corners */
+    color: white;
     text-align: center;
-    animation: fadeEffect 1s ease-in-out; /* Adds fade effect between slides */
+    animation: fadeEffect 1s ease-in-out;
 }
 
 header::before {
@@ -65,14 +64,14 @@ header::after {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
 }
 
-header h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4.5rem;
-    margin-bottom: 20px;
+header p {
+    font-size: 1.6rem; /* Increased font size */
+    margin-bottom: 30px;
+    line-height: 1.8; /* Increased line height for readability */
 }
 
 header p {
@@ -85,16 +84,16 @@ header .btn-primary {
     display: inline-block;
     background: #ff6384;
     color: white;
-    padding: 15px 30px;
+    padding: 15px 35px; /* Increased padding */
     border-radius: 50px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Increased font size */
     transition: all 0.3s ease;
 }
 
 header .btn-primary:hover {
     background: #ff506d;
-    transform: scale(1.05);
+    transform: scale(1.1); /* Slightly increased scale on hover */
 }
 
 main {
